@@ -163,8 +163,8 @@ optimize_prior_variance = function (optimize_V, betahat, shat2, prior_weights,
   # non-zeros estimates unless they are indeed small enough to be
   # neglible. See more intuition at
   # https://stephens999.github.io/fiveMinuteStats/LR_and_BF.html
-  if (loglik(0,betahat,shat2,prior_weights) +
-      check_null_threshold >= loglik(V,betahat,shat2,prior_weights))
+  if ((loglik(0,betahat,shat2,prior_weights) +
+      check_null_threshold) >= loglik(V,betahat,shat2,prior_weights))
     V = 0
 
   return(V)
