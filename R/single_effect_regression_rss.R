@@ -111,7 +111,7 @@ optimize_prior_variance_rss = function (optimize_V, z, Sigma, prior_weights,
   # non-zeros estimates unless they are indeed small enough to be
   # neglible. See more intuition at
   # https://stephens999.github.io/fiveMinuteStats/LR_and_BF.html
-  if (loglik_rss(0,z,Sigma,prior_weights) + check_null_threshold >=
+  if ((loglik_rss(0,z,Sigma,prior_weights) + check_null_threshold) >=
       loglik_rss(V,z,Sigma,prior_weights))
     V = 0
   return(V)
